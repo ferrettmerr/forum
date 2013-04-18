@@ -1,0 +1,19 @@
+<div id="threads">
+	<div class="threads">
+	<table>
+		<thead>
+			<th class="title">Title</th>
+			<th class="posts">Posts</th>
+			<th class="last_activity">Last Activity</th>
+			<th class="views">Views</th>
+		</thead>
+		<tbody>	
+	<% @threads.each do |thread| %>
+		<tr>
+			<td class="title"><%= link_to thread.title, thread %></td>
+			<td class="posts">0</td>
+			<td class="last_activity"><%= link_to thread.title, thread %></td>
+			<td class="views"><%= thread.impressionist_count %></td>
+		</tr>
+	<% end %>
+<div>
