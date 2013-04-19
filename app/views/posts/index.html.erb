@@ -1,18 +1,22 @@
-<div id="threads">
-	<div class="threads">
-	<table>
+<div class="threads">
+	<table cellpadding="0" cellspacing="0">
 		<thead>
-			<th class="title">Title</th>
-			<th class="posts">Posts</th>
-			<th class="last_activity">Last Activity</th>
-			<th class="views">Views</th>
+			<th>Topic</th>
+			<th>Posts</th>
+			<th>Views</th>
 		</thead>
 		<tbody>	
 	<% @threads.each do |thread| %>
 		<tr>
-			<td class="title"><%= link_to thread.title, thread %></td>
-			<td class="posts">0</td>
-			<td class="last_activity"><%= link_to thread.title, thread %></td>
+			<td class="title">
+				<div class="title_item">
+					<%= link_to thread.title, thread %>
+				</div>
+				<div class="thread_started">
+					Date started: <%= thread.created_at %>
+				</div>
+			</td>
+			<td class="posts"><%=thread.posts_count || 0%></td>
 			<td class="views"><%= thread.impressionist_count %></td>
 		</tr>
 	<% end %>

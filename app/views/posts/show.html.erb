@@ -1,1 +1,41 @@
-woo!
+<div class="thread">
+	<div class="breadcrumb">
+		<div class="crumb">
+			<%= link_to "Threads", posts_path %>
+		</div>
+		<% thread = @thread %>
+		<% while (not thread.nil?) do %>
+			<div class="crumb">
+				<% link_to thread.title, thread %>
+				<% thread = thread.thread %>
+			</div>
+		<% end %>
+	</div>
+	<div class="first_post">
+		<div class="title"><%= @thread.title %></div>
+		
+	</div>
+
+	
+	<div class="post_count">
+		 <%= pluralize @thread.posts.count, "Post" %>
+	</div>
+	<div class="message"><%=@thread.message%></div>
+	<div class="posts">
+		<% @thread.posts.each do |post| %>
+			
+
+			<div class="post">
+				<div class="user">
+					<div class="email">
+						<%= post.user.email %>
+					</div>
+				</div>
+				<div class="title_message">		
+					<div class="title"><%= post.title %></div>
+					<div class="message"><%=post.message%></div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+body{
+	background: #5596c0;
+}
+.container{
+	width: 1024px;
+	height: 768px;
+	margin: auto;
+}
