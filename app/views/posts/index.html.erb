@@ -6,18 +6,21 @@
 			<th>Views</th>
 		</thead>
 		<tbody>	
-	<% @threads.each do |thread| %>
-		<tr>
-			<td class="title">
-				<div class="title_item">
-					<%= link_to thread.title, thread %>
-				</div>
-				<div class="thread_started">
-					Date started: <%= thread.created_at %>
-				</div>
-			</td>
-			<td class="posts"><%=thread.posts_count || 0%></td>
-			<td class="views"><%= thread.impressionist_count %></td>
-		</tr>
-	<% end %>
+			<% @threads.each do |thread| %>
+				<tr>
+					<td class="title">
+						<div class="title_item">
+							<%= link_to thread.title, thread %>
+						</div>
+						<div class="thread_started">
+							Date started: <%= thread.created_at %>
+						</div>
+					</td>
+					<td class="posts"><%=thread.posts_count || 0%></td>
+					<td class="views"><%= thread.impressionist_count %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= link_to "New Thread", new_post_path, {class: :new_button} %>
 <div>
