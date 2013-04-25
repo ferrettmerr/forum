@@ -22,5 +22,6 @@
 			<% end %>
 		</tbody>
 	</table>
+	<div class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></div> 
 	<%= link_to "New Thread", new_post_path, {class: :new_button} %>
 <div>
